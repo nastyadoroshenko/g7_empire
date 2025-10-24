@@ -109,6 +109,7 @@ h1{
 h2{
     font-size: 18px;
     font-weight: 300;
+    width: 600px;
 }
 .button_twice{
     margin-top: 20px;
@@ -220,13 +221,53 @@ h2{
         padding: 50px 0 0 0;
     }
     .block_info{
-        width: 75%;
+        width: 84%;
     }
     .why_we h2{
         margin-bottom: 50px;
     }
     .why_we{
         min-width: max-content;
+    }
+    .inform_main h1{
+        font-size: 70px;
+        margin-top: 190px;
+    }
+    .inform_main h2{
+        font-size: 30px;
+        width: 100%;
+    }
+    .button_twice{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+    }
+    .button_contact_us_2, .view_vacancies{
+        width: 100%;
+        height: 120px;
+        font-size: 30px;
+    }
+    .inform_main{
+        height: max-content;
+    }
+    .main_block{
+        height: max-content;
+        padding-bottom: 190px;
+    }
+    .header_block{
+        height: max-content;
+    }
+    .block_information_mein{
+        height: max-content;
+    }
+    .why_we h2{
+        text-align: center;
+    }
+    .border_info_block h2{
+        width: 100%;
     }
 }
 /*Другий блок інформації*/
@@ -239,7 +280,7 @@ h2{
     padding-bottom: 100px;
 }
 .border_info_block{
-    width:72%;
+    width:75%;
     height: max-content;
     border: 3px solid #1e1e1e;
     border-radius: 40px;
@@ -327,7 +368,7 @@ h2{
         display: none;
     }
     .border_info_block h2{
-        text-align: ;
+        
     }
 }
 .border_info_block button:hover{
