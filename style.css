@@ -1,0 +1,338 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Головне меню*/
+.main_block{
+    width: 84%;
+    height: 100vh;
+    background: #1e1e1e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 8%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 8    0px 80px;
+}
+.header_block{
+    position: sticky;
+    top: 0;
+    width: 84%;
+    background: #1e1e1e;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding: 0 8%;
+    z-index: 10000;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.logo p{
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.language{
+    flex-grow: 4;
+}
+.navigation,.contact_us{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 20px;
+}
+.language{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 35px;
+}
+.block_button{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+.block_button a,.navigation a{
+    outline: none;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid #1e1e1e;
+    transition: 0.2s;
+}
+.button_contact_us{
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.6s;
+    border: 2px solid white;
+}
+.block_information_mein{
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: row;
+}
+.inform_main{
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 0px 60px 0px;
+    z-index: 2;
+}
+.img_main{
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+h1{
+    font-size: 50px;
+    margin: 0;
+}
+h2{
+    font-size: 18px;
+    font-weight: 300;
+}
+.button_twice{
+    margin-top: 20px;
+    width: 400px;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button_contact_us_2,.view_vacancies{
+    width: 190px;
+    height: 50px;
+    border-radius: 10px;
+}
+.button_contact_us_2{
+    border: none;
+    border: 2px solid white;
+    transition: 0.6s;
+}
+.view_vacancies{
+    background: #1e1e1e;
+    border: 2px solid white;
+    color: white;
+    transition: 0.6s;
+}
+.fon{
+    position: absolute;
+    right: 100px;
+    width: 800px;
+    height: 80%;
+}
+
+/*Головний екрн адаптація*/
+
+@media (max-width: 1050px){
+    .navigation{
+        display: none;
+    }
+}
+
+/*Стилі ховер для головного екрану*/
+.button_contact_us:hover, .button_contact_us_2:hover{
+    background: #1e1e1e;
+    color: white;
+    transition: 0.6s;
+}
+.view_vacancies:hover{
+    background: white;
+    color: #1e1e1e;
+    transition: 0.6s;
+}
+.navigation a:hover{
+    border-bottom: 2px solid white;
+    transition: 0.2s;
+}
+
+/*Перший блок інформації "Чому ми?"*/
+.first_info_block_why_we{
+    width: 84%;
+    padding: 130px 8% 0px 8%;
+    display: flex;
+    flex-direction: row;
+}
+.why_we{
+    width: 30%;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+}
+.block_info{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.block_info div{
+    border-radius: 30px;
+    border: 3px solid #1e1e1e;
+    flex: 1 1 200px;
+}
+.why_we h2{
+    margin: 0;
+    font-size: 55px;
+    font-weight: bolder;
+    color: #1e1e1e;
+}
+.info_one{
+    color: #1e1e1e;
+}
+.info_two,.info_one,.info_tree,.info_fore{
+    padding: 30px;
+    color: #1e1e1e;
+}
+.block_info h3{
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+.info_one p{
+    width: 340px;
+}
+/*Перший блок інформації адаптація*/
+@media (max-width: 1050px){
+    .first_info_block_why_we{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0 0 0;
+    }
+    .block_info{
+        width: 75%;
+    }
+    .why_we h2{
+        margin-bottom: 50px;
+    }
+    .why_we{
+        min-width: max-content;
+    }
+}
+/*Другий блок інформації*/
+.second_info_block{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.border_info_block{
+    width:72%;
+    height: max-content;
+    border: 3px solid #1e1e1e;
+    border-radius: 40px;
+    margin-top: 200px;
+    padding: 30px 4%;
+    color: #1e1e1e;
+}
+.border_info_block h2{
+    font-size: 55px;
+    font-weight: 600;
+    margin: 30px 0 30px 0;
+}
+.border_info_block button{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: #1e1e1e;
+    border: 2px solid #1e1e1e;
+    color: white;
+    font-weight: bold;
+    transition: 0.6s;
+}
+.info_border{
+    margin-top: 70px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+.info_border div{
+    flex-grow: 1;
+    width: 365px;
+    background: #1e1e1e;
+    border-radius: 30px;
+    color: white;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.info_border div h3{
+    font-size: 30px;
+}
+.border_one, .border_two{
+    height: 230px;
+}
+.border_tree{
+    height: max-content;
+    max-height: 230px;
+}
+.border_one h3,.border_two h3{
+    margin: 0;
+}
+.border_one p,.border_two p{
+    margin: 20px 0 0 0 ;
+}
+.border_tree h3{
+    margin-bottom: 0;
+}
+.border_tree p{
+    margin-bottom: 30px;
+}
+/**/
+
+@media (max-width: 1050px){
+    .border_info_block{
+        width: 75%;
+    }
+}
+@media (max-width: 1200px){
+    .second_info_block{
+        height: max-content;
+    }
+    .info_border{
+        display: flex;
+        flex-direction: column;
+    }
+    .info_border div{
+        width: calc(100% - 60px);
+    }
+    .border_info_block button{
+        display: none;
+    }
+    .border_info_block h2{
+        text-align: ;
+    }
+}
+.border_info_block button:hover{
+    background: white;
+    color: #1e1e1e;
+    transition: 0.6s;
+}
+/**/
