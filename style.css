@@ -1,10 +1,15 @@
+/* ===========================
+   БАЗОВІ СТИЛІ
+=========================== */
 body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Головне меню*/
+/* ===========================
+   ГОЛОВНЕ МЕНЮ / HERO
+=========================== */
 .main_block{
     width: 84%;
     height: 100vh;
@@ -15,8 +20,10 @@ body{
     color: white;
     display: flex;
     flex-direction: column;
-    border-radius: 0px 0px 8    0px 80px;
+    /* виправлено помилку з радіусом, логіка збережена */
+    border-radius: 0 0 80px 0;
 }
+
 .header_block{
     position: sticky;
     top: 0;
@@ -29,6 +36,7 @@ body{
     padding: 0 8%;
     z-index: 10000;
 }
+
 .logo{
     display: flex;
     align-items: center;
@@ -39,9 +47,11 @@ body{
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .language{
     flex-grow: 4;
 }
+
 .navigation,.contact_us{
     display: flex;
     flex-direction: row;
@@ -54,6 +64,7 @@ body{
     justify-content: space-around;
     column-gap: 20px;
 }
+
 .language{
     display: flex;
     flex-direction: row;
@@ -61,11 +72,13 @@ body{
     align-items: center;
     padding-right: 35px;
 }
+
 .block_button{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
 }
+
 .block_button a,.navigation a{
     outline: none;
     text-decoration: none;
@@ -73,6 +86,7 @@ body{
     border-bottom: 2px solid #1e1e1e;
     transition: 0.2s;
 }
+
 .button_contact_us{
     width: 180px;
     height: 50px;
@@ -81,12 +95,16 @@ body{
     transition: 0.6s;
     border: 2px solid white;
 }
+
 .block_information_mein{
     width: 100%;
     height: calc(100vh - 90px);
     display: flex;
     flex-direction: row;
+    /* зберігаємо флекс-логіку, додаємо можливість переносів */
+    flex-wrap: wrap;
 }
+
 .inform_main{
     height: calc(100vh - 150px);
     display: flex;
@@ -95,6 +113,7 @@ body{
     padding: 0px 0px 60px 0px;
     z-index: 2;
 }
+
 .img_main{
     height: calc(100vh - 90px);
     display: flex;
@@ -102,6 +121,7 @@ body{
     align-items: center;
     z-index: 1;
 }
+
 h1{
     font-size: 50px;
     margin: 0;
@@ -110,6 +130,10 @@ h2{
     font-size: 18px;
     font-weight: 300;
     width: 600px;
+    max-width: 100%;
+}
+.h2_2{
+    display: none;
 }
 .button_twice{
     margin-top: 20px;
@@ -118,7 +142,11 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* залишаємо флекс, без grid */
+    flex-wrap: nowrap;
+    gap: 0;
 }
+
 .button_contact_us_2,.view_vacancies{
     width: 190px;
     height: 50px;
@@ -135,6 +163,7 @@ h2{
     color: white;
     transition: 0.6s;
 }
+
 .fon{
     position: absolute;
     right: 100px;
@@ -142,15 +171,9 @@ h2{
     height: 80%;
 }
 
-/*Головний екрн адаптація*/
-
-@media (max-width: 1050px){
-    .navigation{
-        display: none;
-    }
-}
-
-/*Стилі ховер для головного екрану*/
+/* ===========================
+   ХОВЕР-СТИЛІ ДЛЯ HERO
+=========================== */
 .button_contact_us:hover, .button_contact_us_2:hover{
     background: #1e1e1e;
     color: white;
@@ -166,111 +189,61 @@ h2{
     transition: 0.2s;
 }
 
-/*Перший блок інформації "Чому ми?"*/
+/* ===========================
+   ПЕРШИЙ БЛОК "ЧОМУ МИ?"
+=========================== */
 .first_info_block_why_we{
     width: 84%;
     padding: 130px 8% 0px 8%;
     display: flex;
     flex-direction: row;
 }
+
 .why_we{
     width: 30%;
     min-width: 300px;
     display: flex;
     align-items: center;
 }
+.why_we h2{
+    margin: 0;
+    width: max-content;
+    font-size: 55px;
+    font-weight: bolder;
+    color: #1e1e1e;
+}
+
 .block_info{
     width: 70%;
     display: flex;
     flex-direction: row;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                 /* твоя логіка переносу збережена */
 }
+
 .block_info div{
     border-radius: 30px;
     border: 3px solid #1e1e1e;
-    flex: 1 1 200px;
-}
-.why_we h2{
-    margin: 0;
-    font-size: 55px;
-    font-weight: bolder;
+    flex: 1 1 200px;                 /* флекс-режим карток, без grid */
+    padding: 30px;
     color: #1e1e1e;
+    transition: border-color 0.3s ease;
 }
+
 .info_one{
     color: #1e1e1e;
 }
 .info_two,.info_one,.info_tree,.info_fore{
-    padding: 30px;
     color: #1e1e1e;
 }
 .block_info h3{
     font-size: 30px;
     margin-bottom: 0px;
 }
-.info_one p{
-    width: 340px;
-}
-/*Перший блок інформації адаптація*/
-@media (max-width: 1050px){
-    .first_info_block_why_we{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px 0 0 0;
-    }
-    .block_info{
-        width: 84%;
-    }
-    .why_we h2{
-        margin-bottom: 50px;
-    }
-    .why_we{
-        min-width: max-content;
-    }
-    .inform_main h1{
-        font-size: 70px;
-        margin-top: 190px;
-    }
-    .inform_main h2{
-        font-size: 30px;
-        width: 100%;
-    }
-    .button_twice{
-        width: 100%;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 150px;
-    }
-    .button_contact_us_2, .view_vacancies{
-        width: 100%;
-        height: 120px;
-        font-size: 30px;
-    }
-    .inform_main{
-        height: max-content;
-    }
-    .main_block{
-        height: max-content;
-        padding-bottom: 190px;
-    }
-    .header_block{
-        height: max-content;
-    }
-    .block_information_mein{
-        height: max-content;
-    }
-    .why_we h2{
-        text-align: center;
-    }
-    .border_info_block h2{
-        width: 100%;
-    }
-}
-/*Другий блок інформації*/
+
+/* ===========================
+   ДРУГИЙ БЛОК ІНФОРМАЦІЇ
+=========================== */
 .second_info_block{
     width: 100%;
     height: max-content;
@@ -279,6 +252,7 @@ h2{
     align-items: center;
     padding-bottom: 100px;
 }
+
 .border_info_block{
     width:75%;
     height: max-content;
@@ -303,15 +277,22 @@ h2{
     font-weight: bold;
     transition: 0.6s;
 }
+.border_info_block button:hover{
+    background: white;
+    color: #1e1e1e;
+    transition: 0.6s;
+}
+
 .info_border{
     margin-top: 70px;
     margin-bottom: 30px;
     width: 100%;
     height: max-content;
-    display: flex;
+    display: flex;                   /* флекс-логіка залишена */
     flex-direction: row;
     justify-content: space-around;
     gap: 20px;
+    flex-wrap: wrap;                 /* дозволяємо перенос карток */
 }
 .info_border div{
     flex-grow: 1;
@@ -346,20 +327,90 @@ h2{
 .border_tree p{
     margin-bottom: 30px;
 }
-/**/
 
+/* ===========================
+   АДАПТАЦІЯ (тільки FLEX)
+=========================== */
+
+/* приховуємо навігацію на планшетах, як у тебе */
 @media (max-width: 1050px){
-    .border_info_block{
-        width: 75%;
+    .h2_2{
+        display: block;
+        text-align: center;
+    }
+    .navigation{
+        display: none;
+    }
+    .h2_1{
+        display: none;
+    }
+    .first_info_block_why_we{
+        width: 100%;
+        display: flex;
+        flex-direction: column;      /* залишаємось у flex */
+        align-items: center;
+        padding: 50px 0 0 0;
+    }
+    .block_info{
+        width: 84%;
+    }
+    .why_we h2{
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .why_we{
+        min-width: max-content;
+        width: auto;
+    }
+    .inform_main h1{
+        font-size: 70px;
+        margin-top: 190px;
+    }
+    .inform_main h2{
+        font-size: 30px;
+        width: 100%;
+    }
+    .button_twice{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;      /* твоя початкова логіка */
+        align-items: center;
+        margin-top: 150px;
+        gap: 20px;                   /* невеликий відступ між кнопками */
+    }
+    .button_contact_us_2, .view_vacancies{
+        width: 100%;
+        height: 120px;
+        font-size: 30px;
+    }
+    .inform_main{
+        height: max-content;
+    }
+    .main_block{
+        height: max-content;
+        padding-bottom: 190px;
+    }
+    .header_block{
+        height: max-content;
+    }
+    .block_information_mein{
+        height: max-content;
+    }
+    .border_info_block h2{
+        width: 100%;
     }
 }
+
+/* дрібніший брейкпоінт — тільки флекс-переноси */
 @media (max-width: 1200px){
     .second_info_block{
         height: max-content;
     }
     .info_border{
         display: flex;
-        flex-direction: column;
+        flex-direction: column;     /* стек карток у колонку */
+        align-items: stretch;
     }
     .info_border div{
         width: calc(100% - 60px);
@@ -367,13 +418,20 @@ h2{
     .border_info_block button{
         display: none;
     }
-    .border_info_block h2{
-        
+}
+
+/* мобільні корекції заголовку на hero */
+@media (max-width: 750px){
+    .inform_main h1{
+        font-size: 40px;
     }
 }
-.border_info_block button:hover{
-    background: white;
-    color: #1e1e1e;
-    transition: 0.6s;
+
+/* коли рамка не потрібна на мобільних (зберігаємо твою логіку) */
+@media (max-width: 1050px){
+    .border_info_block{
+        width: 83%;
+        border: none;
+        margin-top: 0px;
+    }
 }
-/**/
